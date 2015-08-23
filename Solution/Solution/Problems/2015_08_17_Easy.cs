@@ -17,12 +17,20 @@ namespace Solution
         public void Execute()
         {
             CreateList();
-            foreach (var item in wordsToProcess)
+
+            foreach (var word in wordsToProcess)
             {
-                Console.WriteLine(item);
+                var order = IsInOrder(word);
+                if (order == true)
+                {
+                    Console.WriteLine("{0} is in order", word);
+                }
+                else
+                {
+                    Console.WriteLine("{0} is not in order", word);
+                }
             }
         }
-
 
         public void CreateList()
         {
@@ -39,6 +47,22 @@ namespace Solution
             wordsToProcess.Add("abhors");
             wordsToProcess.Add("chimps");
             wordsToProcess.Add("wronged");
+        }
+
+        public bool IsInOrder(string wordToCheck)
+        {
+            char[] check = wordToCheck.ToCharArray();
+
+            Array.Sort(check);
+
+            if (check.SequenceEqual(wordToCheck.ToCharArray()))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
