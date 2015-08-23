@@ -9,16 +9,17 @@ namespace Solution
 {
     public class _2015_08_17_Easy : IRunSolution
     {
+        public List<string> wordsToProcess = new List<string>();
 
         public void Execute()
         {
+            CreateList();
             foreach (var item in wordsToProcess)
             {
                 Console.WriteLine(item);
             }
         }
 
-        public List<string> wordsToProcess = new List<string>();
 
         public void CreateList()
         {

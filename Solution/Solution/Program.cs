@@ -12,7 +12,7 @@ namespace Solution
         {
             var answers = new List<IRunSolution>();
 
-            if (ConfigurationManager.AppSettings["Problem001"].ParseBoolValue())
+            if (ConfigurationManager.AppSettings["_2015_08_17_Easy"].ParseBoolValue())
                 answers.Add(new _2015_08_17_Easy() as IRunSolution);
 
             //Check for Problems to run and display each's answer
