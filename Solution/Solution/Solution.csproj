@@ -47,6 +47,7 @@
     <Compile Include="Helpers\ParseHelper.cs" />
     <Compile Include="Interfaces\IRunSolution.cs" />
     <Compile Include="Problems\2015_08_17_Easy.cs" />
+    <Compile Include="Problems\2015_10_26_Easy.cs" />
     <Compile Include="Problems\2015_11_02_Easy.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
