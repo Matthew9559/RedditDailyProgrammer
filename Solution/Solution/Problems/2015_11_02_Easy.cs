@@ -11,32 +11,16 @@ namespace Solution.Problems
             var number = Console.ReadLine();
 
             var numberConverted = int.Parse(number);
-            //var numberFinal = numberConverted;
+            int remainder = 0;
 
-            while (numberConverted >= 1)
+            while (numberConverted > 1)
             {
+                remainder = numberConverted % 3 == 0 ? 0 : numberConverted % 3 == 1 ? -1 : 1;
 
+                Console.WriteLine("{0}: {1}", numberConverted, remainder);
+
+                numberConverted = (numberConverted + remainder) / 3;
             }
-
-            //while (numberFinal != 1)
-            //{ 
-            //    if (numberFinal % 3 == 0)
-            //    {
-            //        numberFinal =  (numberFinal / 3);
-            //        Console.WriteLine("{0}: 0", numberFinal);
-            //    }
-
-            //    else if ((numberFinal + 1) % 3 == 0)
-            //    {
-            //        numberFinal = (numberFinal / 3);
-            //        Console.WriteLine("{0}: 1", numberFinal);
-            //    }
-            //    else
-            //    {
-            //        numberFinal = ((numberFinal - 1) / 3);
-            //        Console.WriteLine("{0}: -1", numberFinal);
-            //    }
-            //}
         }
     }
 }
