@@ -12,7 +12,7 @@ namespace Solution
 {
     public class _2015_08_17_Easy : IRunSolution
     {
-        public List<string> wordsToProcess = new List<string>();
+        internal List<string> wordsToProcess = new List<string>();
 
         public void Execute()
         {
@@ -21,18 +21,22 @@ namespace Solution
             foreach (var word in wordsToProcess)
             {
                 var order = IsInOrder(word);
-                if (order == true)
+                if (order == "IN ORDER")
                 {
-                    Console.WriteLine("{0} is in order", word);
+                    Console.WriteLine("{0} IN ORDER", word);
+                }
+                else if (order == "REVERSE ORDER")
+                {
+                    Console.WriteLine("{0} IN REVERSE ORDER", word);
                 }
                 else
                 {
-                    Console.WriteLine("{0} is not in order", word);
+                    Console.WriteLine("{0} NOT IN ORDER", word);
                 }
             }
         }
 
-        public void CreateList()
+        private void CreateList()
         {
             wordsToProcess.Add("billowy");
             wordsToProcess.Add("biopsy");
@@ -49,19 +53,25 @@ namespace Solution
             wordsToProcess.Add("wronged");
         }
 
-        public bool IsInOrder(string wordToCheck)
+        private string IsInOrder(string wordToCheck)
         {
             char[] check = wordToCheck.ToCharArray();
+            char[] reverseCheck = wordToCheck.ToCharArray();
 
             Array.Sort(check);
+            Array.Reverse(reverseCheck);
 
             if (check.SequenceEqual(wordToCheck.ToCharArray()))
             {
-                return true;
+                return "IN ORDER";
+            }
+            else if (string.Concat(wordToCheck.ToCharArray().OrderByDescending(c => c)) == wordToCheck)
+            {
+                return "REVERSE ORDER";
             }
             else
             {
-                return false;
+                return "NOT IN ORDER";
             }
         }
     }
