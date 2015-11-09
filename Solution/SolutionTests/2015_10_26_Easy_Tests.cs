@@ -1,15 +1,42 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace SolutionTests
 {
-    [TestClass]
-    public class UnitTest1
+    [TestFixture]
+    public class Test_2015_10_26_Easy
     {
-        [TestMethod]
-        public void TestMethod1()
+        [Test]
+        public void CheckConstantsAndVowelsAllLowercase()
         {
+            ConvertConstantsAndLetter testConvert = new ConvertConstantsAndLetter();
 
+            var result = testConvert.convertLetters("zxaertio");
+
+            Assert.That(result, "ccvvccvv");
+        }
+
+        [Test]
+        public void CheckConstantsAndVowelsAllUppercase()
+        {
+            ConvertConstantsAndLetter testConvert = new ConvertConstantsAndLetter();
+
+            var result = testConvert.convertLetters("GGOUP");
+
+            Assert.That(result, "CCVVC");
+        }
+
+        [Test]
+        public void CheckConstantsAndVowelsAllMixedcase()
+        {
+            ConvertConstantsAndLetter testConvert = new ConvertConstantsAndLetter();
+
+            var result = testConvert.convertLetters("HjiofU");
+
+            Assert.That(result, "CcvvcV");
         }
     }
 }
+
+
+//Red, Green, Refactor
