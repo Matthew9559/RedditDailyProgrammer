@@ -14,15 +14,10 @@ namespace Solution.Problems
     {
         public void Execute()
         {
-            List<char> alphabet = new List<char>();
-            for(char c = 'a'; c <= 'z'; c++)
-            {
-                alphabet.Add(c);
-            }
-            for (char c = 'A'; c <= 'Z'; c++)
-            {
-                alphabet.Add(c);
-            }
+            const string lowerAlphabetVowels = "aeiou";
+            const string upperAlphabetVowels = "AEIOU";
+            const string lowerAlphabetConstants = "bcdfghjklmnpqrstvwxyz";
+            const string upperAlphabetConstants = "BCDFGHJKLMNPQRSTVWXYZ";
 
             Console.WriteLine("Please enter constants and vowels only");
             var input = Console.ReadLine();
@@ -37,18 +32,32 @@ namespace Solution.Problems
                 }
             }
 
-            //randomize vowels and constants into real letters including capital letters
-            Random randomCharacter = new Random();
-            randomCharacter.Next()
+            string result = "";
+
             foreach (var letter in input)
             {
-                randomCharacter
+                bool isUpper = char.IsUpper(letter);
+                if (isUpper)
+                {
+                    result = GetRandomCharacter(letter);
+                }
+                else
+                {
+
+                }
             }
 
             //output results
 
         }
 
+        public char GetRandomCharacter(string alphabet, char letter)
+        {
+            Random rng = new Random();
+            int lengthOfAlphabet = alphabet.Length;
+            
+            return input;
+        }
 
         public bool CheckIfNotVowel(char input)
         {
