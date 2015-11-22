@@ -14,15 +14,20 @@ namespace Solution.Problems
     {
         public void Execute()
         {
+            List<char> alphabet = new List<char>();
+            for(char c = 'a'; c <= 'z'; c++)
+            {
+                alphabet.Add(c);
+            }
+            for (char c = 'A'; c <= 'Z'; c++)
+            {
+                alphabet.Add(c);
+            }
 
             Console.WriteLine("Please enter constants and vowels only");
             var input = Console.ReadLine();
             input.ToCharArray();
-
-
-
-
-            //error hanndling for non c's and v's
+            
             foreach (var letter in input)
             {
                 if (CheckIfNotVowel(letter) == true && CheckIfNotConstant(letter) == true)
@@ -32,10 +37,13 @@ namespace Solution.Problems
                 }
             }
 
-
-            //ranzomize vowels and constants into real letters including capital letters
-            var things = 0;
-
+            //randomize vowels and constants into real letters including capital letters
+            Random randomCharacter = new Random();
+            randomCharacter.Next()
+            foreach (var letter in input)
+            {
+                randomCharacter
+            }
 
             //output results
 
@@ -45,7 +53,7 @@ namespace Solution.Problems
         public bool CheckIfNotVowel(char input)
         {
             bool isNotVowel = "aeiouAEIOU".IndexOf(input) < 0;
-           return isNotVowel;
+            return isNotVowel;
         }
 
         public bool CheckIfNotConstant(char input)
